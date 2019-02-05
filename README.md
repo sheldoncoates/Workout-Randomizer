@@ -1,2 +1,2 @@
 # Workout-Randomizer
-Randomize your workouts with exercises for each muscle group
+This is a current work in progress.
