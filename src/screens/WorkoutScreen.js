@@ -38,8 +38,8 @@ export default class WorkoutScreen extends Component {
                         <WorkoutButton muscleGroup="Chest" onPress={() => { this.toggleModal(true), this.toggleGroup("chest") }} style={{ backgroundColor: 'rgb(154, 142, 200)' }} />
                         <WorkoutButton muscleGroup="Triceps" onPress={() => { this.toggleModal(true), this.toggleGroup("triceps") }} style={{ backgroundColor: 'rgb(254, 149, 49)' }} />
                         <WorkoutButton muscleGroup="Legs" onPress={() => { this.toggleModal(true), this.toggleGroup("legs") }} style={{ backgroundColor: 'rgb(254, 70, 213)' }} />
-                        <WorkoutButton muscleGroup="Shoulders" onPress={() => { this.toggleModal(true), this.toggleGroup("shoulders") }} style={{ backgroundColor: '#00293C' }} />
-                        <WorkoutButton muscleGroup="Abdomen" onPress={() => { this.toggleModal(true), this.toggleGroup("abs") }} style={{ backgroundColor: '#009900' }} />
+                        <WorkoutButton muscleGroup="Shoulders" onPress={() => { this.toggleModal(true), this.toggleGroup("shoulder") }} style={{ backgroundColor: '#00293C' }} />
+                        <WorkoutButton muscleGroup="Abdomen" onPress={() => { this.toggleModal(true), this.toggleGroup("abdomen") }} style={{ backgroundColor: '#009900' }} />
                     </ScrollView>
                 </View>
                 <Modal
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         textAlign: 'center',
         padding: 20,
-        fontSize: 18,
+        fontSize: 16,
     },
     row: {
         justifyContent: 'center',
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
     },
     DecisionButtonText: {
         textAlign: 'center',
-        fontSize: 18,
+        fontSize: 16,
         color: '#fff',
         fontWeight: '500',
         lineHeight: 30,

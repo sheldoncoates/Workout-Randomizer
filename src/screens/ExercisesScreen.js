@@ -9,36 +9,89 @@ export default class ExercisesScreen extends Component {
             'Deadlifts',
             'Lat Pulldowns',
             'Rows',
+            'Dumbbell Rows',
+            'Rowing Maching',
+            'Pull-Ups',
+            'Chin-Ups',
+            'Rack-Pulls',
+            'Standing Cable Reverse Fly'
         ];
         this.bicepItems = [
             'Dumbbell Curls',
             'Barbell Curls',
             'Preacher Curls',
+            'Hammer Curls',
+            'Cable Curls',
         ];
         this.chestItems = [
             'Bench Press',
+            'Dumbbell Bench Press',
             'Incline Bench Press',
+            'Dumbbell Incline Bench Press',
             'Decline Bench Press',
+            'Dumbbell Decline Bench Press',
+            'Push-Ups',
+            'Peck Deck',
+            'Chest Press',
+            'Cable Flys'
         ];
         this.tricepItems = [
+            'Tricep Dips',
             'Skull Crushers',
-            'Cable Pulls',
-            'Two Hand Cable Pull',
-        ];
+            'Over head Cable Pulls',
+            'Front Cable Pulls', 
+            'Overhead Dumbbell Extension',
+            'Tricep Press',
+            'Tricep Bench Press'      
+         ];
         this.legItems = [
-            'Squats',
+            'Squat Rack',
+            'Kettlebell Swings',
+            'Deadlifts',
+            'Lunges',
+            'Jump Squats',
+            'Wall Sit',
+            'Squat Rack Pulses',
+            'Abductor',
+            'Adductor',
+            'Leg Press',
+            'Hip Thrusts',
+            'Box Jumps',
             'Leg Extensions',
-            'Calf Raises',
+            'Leg Curls',
+            'Stair Climber',
+            'Sideways Risistence Leg Extensions',
+            'Burpees'
         ];
         this.shoulderItems = [
+            'Dumbbell Shoulder Press',
+            'Dumbbell Shoulder Press to Elbow Touch',
+            'Barbell Shoulder Press',
             'Shoulder Press',
-            'Flys',
-            'Raises',
+            'Dumbbell Flys',
+            'Cable Flys',
+            'Front Dumbbell Raises',
+            'Front Cable Pulls',
         ];
-        this.abodomenItems = [
+        this.abdomenItems = [
+            'Plank',
+            'Side Plank',
             'Sit-ups',
             'Crunches',
-            'Twists',
+            'V-Sit-ups',
+            'Oblique Twists',
+            'Leg Scissors',
+            'Leg Raises',
+            'Oblique Toe-Touches',
+            'Leg raises',
+            'Decline Sit-ups',
+            'Standing Med-Ball Twists',
+            'Kenisis Wall Lateral Pulls',
+            'Jumping V-Plank',
+            'Bicylces',
+            'Med-Ball Sit-Ups',
+            'Raised Leg Toe Touches',
+            'Stability Ball Tuck',
         ];
     }
     state = {
@@ -75,13 +128,13 @@ export default class ExercisesScreen extends Component {
             for (i = 0; i < exercises; i++) {
                 this.Array_Items[i] = this.legItems[i];
             }
-        } else if (muscelGroup == "shoulders") {
-            this.muscelGroup = "shoulders";
+        } else if (muscelGroup == "shoulder") {
+            this.muscelGroup = "shoulder";
             for (i = 0; i < exercises; i++) {
                 this.Array_Items[i] = this.shoulderItems[i];
             }
-        } else if (muscelGroup == "abs") {
-            this.muscelGroup = "abs";
+        } else if (muscelGroup == "abdomen") {
+            this.muscelGroup = "abdomen";
             for (i = 0; i < exercises; i++) {
                 this.Array_Items[i] = this.abdomenItems[i];
             }
@@ -117,13 +170,13 @@ export default class ExercisesScreen extends Component {
     }
     render() {
         const { navigation } = this.props;
-        const mGroup = navigation.getParam('mGroup', 'NO-ID');
-        const exercises = navigation.getParam('exercises', 'some default value');
+        const mGroup = navigation.getParam('mGroup', 'No muscle group');
+        const exercises = navigation.getParam('exercises', 'exercise');
         this.populateArray(mGroup, exercises);
         return (
             <View style={styles.container}>
                 <ScrollView>
-                    <Text style={styles.heading}>Tap a {mGroup} exercise to see a description</Text>
+                    <Text style={styles.heading}>Tap an exercise to see the description</Text>
                     {
                         this.Array_Items.map((item, key) =>
                             (
@@ -135,7 +188,6 @@ export default class ExercisesScreen extends Component {
                                 </TouchableOpacity>
 
                             ))
-
                     }
 
                 </ScrollView>
