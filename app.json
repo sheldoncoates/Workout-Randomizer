@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "Workout-Randomizer",
+    "description": "(WIP)iOS application to randomize your workouts with exercises for each muscle group.",
     "slug": "Workout-Randomizer",
     "privacy": "public",
     "sdkVersion": "31.0.0",
@@ -9,8 +10,9 @@
       "android"
     ],
     "version": "1.0.0",
+    "githubUrl":"https://github.com/sheldoncoates/Workout-Randomizer",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/dumbbell.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
