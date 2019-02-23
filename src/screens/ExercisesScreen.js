@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text, Button, Modal, TouchableOpacity, Image, Dimensions, ScrollView, TouchableWithoutFeedback } from 'react-native';
 
 export default class ExercisesScreen extends Component {
-    constructor() {
-        super();
-        this.Array_Items = [];
+    constructor(props) {
+        super(props);
+        this.Array_Items = [""];
+        this.G = "";
+        this.E = "";
+        this.flag = true;
         this.backItems = [
             'Deadlifts',
             'Lat Pulldowns',
@@ -39,11 +42,11 @@ export default class ExercisesScreen extends Component {
             'Tricep Dips',
             'Skull Crushers',
             'Over head Cable Pulls',
-            'Front Cable Pulls', 
+            'Front Cable Pulls',
             'Overhead Dumbbell Extension',
             'Tricep Press',
-            'Tricep Bench Press'      
-         ];
+            'Tricep Bench Press'
+        ];
         this.legItems = [
             'Squat Rack',
             'Kettlebell Swings',
@@ -96,49 +99,91 @@ export default class ExercisesScreen extends Component {
     }
     state = {
         modalVisible: false,
-        description: "",
-        muscelGroup: ""
+        description: <Text></Text>,
+        mGroup: "",
+        exercises: "",
     }
     toggleModal(visible) {
         this.setState({ modalVisible: visible });
     }
-    populateArray(muscelGroup, exercises) {
-        if (muscelGroup == "back") {
-            this.muscelGroup = "back";
-            for (i = 0; i < exercises; i++) {
-                this.Array_Items[i] = this.backItems[i];
+    getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+    populateArray(g, e) {
+        var randIndex = 0;
+        if (this.flag) {
+            this.flag = false;
+            switch (g) {
+                case "back":
+                    for (i = 0; i < e; i++) {
+                        randIndex = this.getRandomInt(this.backItems.length);
+                        while (this.Array_Items.indexOf(this.backItems[randIndex]) > -1) {
+                            randIndex = this.getRandomInt(this.backItems.length);
+                        }
+                        this.Array_Items[i] = this.backItems[randIndex];
+                    }
+                    return this.Array_Items;
+                case "biceps":
+                    for (i = 0; i < e; i++) {
+                        randIndex = this.getRandomInt(this.bicepItems.length);
+                        while (this.Array_Items.indexOf(this.bicepItems[randIndex]) > -1) {
+                            randIndex = this.getRandomInt(this.bicepItems.length);
+                        }
+                        this.Array_Items[i] = this.bicepItems[randIndex];
+                    }
+                    return this.Array_Items;
+                case "chest":
+                    for (i = 0; i < e; i++) {
+                        randIndex = this.getRandomInt(this.chestItems.length);
+                        while (this.Array_Items.indexOf(this.chestItems[randIndex]) > -1) {
+                            randIndex = this.getRandomInt(this.chestItems.length);
+                        }
+                        this.Array_Items[i] = this.chestItems[randIndex];
+                    }
+                    return this.Array_Items;
+                case "triceps":
+                    for (i = 0; i < e; i++) {
+                        randIndex = this.getRandomInt(this.tricepItems.length);
+                        while (this.Array_Items.indexOf(this.tricepItems[randIndex]) > -1) {
+                            randIndex = this.getRandomInt(this.tricepItems.length);
+                        }
+                        this.Array_Items[i] = this.tricepItems[randIndex];
+                    }
+                    return this.Array_Items;
+                case "legs":
+                    for (i = 0; i < e; i++) {
+                        randIndex = this.getRandomInt(this.legItems.length);
+                        while (this.Array_Items.indexOf(this.legItems[randIndex]) > -1) {
+                            randIndex = this.getRandomInt(this.legItems.length);
+                        }
+                        this.Array_Items[i] = this.legItems[randIndex];
+                    }
+                    return this.Array_Items;
+                case "shoulder":
+                    for (i = 0; i < e; i++) {
+                        randIndex = this.getRandomInt(this.shoulderItems.length);
+                        while (this.Array_Items.indexOf(this.shoulderItems[randIndex]) > -1) {
+                            randIndex = this.getRandomInt(this.shoulderItems.length);
+                        }
+                        this.Array_Items[i] = this.shoulderItems[randIndex];
+                    }
+                    return this.Array_Items;
+                case "abdomen":
+                    for (i = 0; i < e; i++) {
+                        randIndex = this.getRandomInt(this.abdomenItems.length);
+                        while (this.Array_Items.indexOf(this.abdomenItems[randIndex]) > -1) {
+                            randIndex = this.getRandomInt(this.abdomenItems.length);
+                        }
+                        this.Array_Items[i] = this.abdomenItems[randIndex];
+                    }
+                    return this.Array_Items;
+                default:
+                    return this.Array_Items;
             }
-        } else if (muscelGroup == "biceps") {
-            this.muscelGroup = "biceps";
-            for (i = 0; i < exercises; i++) {
-                this.Array_Items[i] = this.bicepItems[i];
-            }
-        } else if (muscelGroup == "chest") {
-            this.muscelGroup = "chest";
-            for (i = 0; i < exercises; i++) {
-                this.Array_Items[i] = this.chestItems[i];
-            }
-        } else if (muscelGroup == "triceps") {
-            this.muscelGroup = "triceps";
-            for (i = 0; i < exercises; i++) {
-                this.Array_Items[i] = this.tricepItems[i];
-            }
-        } else if (muscelGroup == "legs") {
-            this.muscelGroup = "legs";
-            for (i = 0; i < exercises; i++) {
-                this.Array_Items[i] = this.legItems[i];
-            }
-        } else if (muscelGroup == "shoulder") {
-            this.muscelGroup = "shoulder";
-            for (i = 0; i < exercises; i++) {
-                this.Array_Items[i] = this.shoulderItems[i];
-            }
-        } else if (muscelGroup == "abdomen") {
-            this.muscelGroup = "abdomen";
-            for (i = 0; i < exercises; i++) {
-                this.Array_Items[i] = this.abdomenItems[i];
-            }
+        } else {
+            return this.Array_Items;
         }
+
     }
     setDescription(item) {
         if (item == "done") {
@@ -146,8 +191,8 @@ export default class ExercisesScreen extends Component {
                 <Text style={styles.modalHeading}>Are you sure you are done your workout?</Text>
                 <TouchableOpacity onPress={() => {
                     this.props.navigation.navigate('Workout'),
-                        this.Array_Items = [],
-                        this.muscelGroup = "",
+                        this.Array_Items = [""],
+                        this.toggleGroup(""),
                         this.toggleModal(!this.state.modalVisible),
                         this.description = <Text></Text>
                 }} style={{ paddingBottom: 20, paddingTop: 10 }}>
@@ -157,7 +202,10 @@ export default class ExercisesScreen extends Component {
                 </TouchableOpacity>
             </View>
         }
-        if (this.muscelGroup == "biceps") {
+        if(this.G == "back"){
+
+        }
+        if (this.G == "biceps") {
             if (item == "Dumbbell Curls") {
                 this.description = <Text style={styles.modalHeading}>This is the dumbbell curls description</Text>;
             } else if (item == "Barbell Curls") {
@@ -167,18 +215,37 @@ export default class ExercisesScreen extends Component {
                 this.description = <Text style={styles.modalHeading}>This is the Preacher curls description</Text>;
             }
         }
+        if(this.G == "chest"){
+            
+        }
+        if(this.G == "triceps"){
+            
+        }
+        if(this.G == "legs"){
+            
+        }
+        if(this.G == "shoulder"){
+            
+        }
+        if(this.G == "abdomen"){
+            
+        }
+    }
+    toggleGroup(g) {
+        this.setState({ mGroup: g });
+    }
+    componentWillReceiveProps() {
+        this.flag = this.props.navigation.state.params.flag;
     }
     render() {
-        const { navigation } = this.props;
-        const mGroup = navigation.getParam('mGroup', 'No muscle group');
-        const exercises = navigation.getParam('exercises', 'exercise');
-        this.populateArray(mGroup, exercises);
+        this.G = this.props.navigation.state.params.mGroup;
+        this.E = this.props.navigation.state.params.exercises;
         return (
             <View style={styles.container}>
                 <ScrollView>
                     <Text style={styles.heading}>Tap an exercise to see the description</Text>
                     {
-                        this.Array_Items.map((item, key) =>
+                        this.populateArray(this.G, this.E).map((item, key) =>
                             (
                                 <TouchableOpacity key={key} onPress={() => { this.toggleModal(true), this.setDescription(item) }} style={styles.button}>
                                     <View style={styles.buttonInternals}>
@@ -186,18 +253,16 @@ export default class ExercisesScreen extends Component {
                                         <Text style={styles.text}>{item}</Text>
                                     </View>
                                 </TouchableOpacity>
-
                             ))
                     }
-
+                    <TouchableOpacity onPress={() => {
+                        this.toggleModal(true), this.setDescription("done")
+                    }} style={styles.doneButtonContainer}>
+                        <View style={styles.DoneButton}>
+                            <Text style={styles.DoneButtonText}>Done</Text>
+                        </View>
+                    </TouchableOpacity>
                 </ScrollView>
-                <TouchableOpacity onPress={() => {
-                    this.toggleModal(true), this.setDescription("done")
-                }} style={{ paddingBottom: 20, paddingTop: 10 }}>
-                    <View style={styles.DoneButton}>
-                        <Text style={styles.DoneButtonText}>Done</Text>
-                    </View>
-                </TouchableOpacity>
                 <Modal
                     animationType={"fade"}
                     transparent={true}
@@ -213,7 +278,7 @@ export default class ExercisesScreen extends Component {
                             <View style={styles.modal}>
                                 {this.description}
                                 <Button
-                                    onPress={() => { this.toggleModal(!this.state.modalVisible) , this.description = <Text></Text>}}
+                                    onPress={() => { this.toggleModal(!this.state.modalVisible), this.description = <Text></Text> }}
                                     title="Back"
                                     color="#841584"
                                 />
@@ -324,6 +389,17 @@ const styles = StyleSheet.create({
         elevation: 5,
         shadowRadius: 5,
         shadowOffset: { width: 1, height: 1 },
+    },
+    doneButtonContainer: {
+        shadowColor: '#000',
+        shadowOpacity: 0.2,
+        elevation: 1,
+        shadowRadius: 5,
+        shadowOffset: { width: 1, height: 2 },
+        paddingLeft: 10,
+        paddingRight: 10,
+        paddingTop: 15,
+        paddingBottom: 25,
     },
     DoneButton: {
         width: Dimensions.get('window').width - 20,
