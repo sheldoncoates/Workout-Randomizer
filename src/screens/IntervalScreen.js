@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import AppStyles from '../config/styles';
-
 
 export default class IntervalScreen extends Component {
     render() {
@@ -17,6 +15,5 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: AppStyles.colors.lightWhite
     }
 });

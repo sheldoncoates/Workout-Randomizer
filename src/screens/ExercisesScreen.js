@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Button, Modal, TouchableOpacity, Image, Dimensions, ScrollView, TouchableWithoutFeedback } from 'react-native';
-
+import { View, Text, Button, Modal, TouchableOpacity, Image, ScrollView, TouchableWithoutFeedback } from 'react-native';
+import styles from '../Styles/ExercisesScreenStyle';
 export default class ExercisesScreen extends Component {
     constructor(props) {
         super(props);
@@ -100,8 +100,6 @@ export default class ExercisesScreen extends Component {
     state = {
         modalVisible: false,
         description: <Text></Text>,
-        mGroup: "",
-        exercises: "",
     }
     toggleModal(visible) {
         this.setState({ modalVisible: visible });
@@ -186,22 +184,6 @@ export default class ExercisesScreen extends Component {
 
     }
     setDescription(item) {
-        if (item == "done") {
-            this.description = <View style={styles.container}>
-                <Text style={styles.modalHeading}>Are you sure you are done your workout?</Text>
-                <TouchableOpacity onPress={() => {
-                    this.props.navigation.navigate('Workout'),
-                        this.Array_Items = [""],
-                        this.toggleGroup(""),
-                        this.toggleModal(!this.state.modalVisible),
-                        this.description = <Text></Text>
-                }} style={{ paddingBottom: 20, paddingTop: 10 }}>
-                    <View style={styles.DunButton}>
-                        <Text style={styles.DoneButtonText}>Done</Text>
-                    </View>
-                </TouchableOpacity>
-            </View>
-        }
         if(this.G == "back"){
 
         }
@@ -231,9 +213,6 @@ export default class ExercisesScreen extends Component {
             
         }
     }
-    toggleGroup(g) {
-        this.setState({ mGroup: g });
-    }
     componentWillReceiveProps() {
         this.flag = this.props.navigation.state.params.flag;
     }
@@ -255,13 +234,6 @@ export default class ExercisesScreen extends Component {
                                 </TouchableOpacity>
                             ))
                     }
-                    <TouchableOpacity onPress={() => {
-                        this.toggleModal(true), this.setDescription("done")
-                    }} style={styles.doneButtonContainer}>
-                        <View style={styles.DoneButton}>
-                            <Text style={styles.DoneButtonText}>Done</Text>
-                        </View>
-                    </TouchableOpacity>
                 </ScrollView>
                 <Modal
                     animationType={"fade"}
@@ -290,138 +262,3 @@ export default class ExercisesScreen extends Component {
         );
     }
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    heading: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        padding: 10,
-        fontSize: 18,
-    },
-    button: {
-        shadowColor: '#000',
-        shadowOpacity: 0.2,
-        elevation: 1,
-        shadowRadius: 5,
-        shadowOffset: { width: 1, height: 2 },
-        paddingLeft: 10,
-        paddingRight: 10,
-        paddingTop: 5,
-        paddingBottom: 5,
-    },
-    buttonInternals: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: Dimensions.get('window').width - 20,
-        height: 100,
-        borderWidth: 1,
-        borderColor: '#d6d7da',
-    },
-    image: {
-        width: 70,
-        height: 70,
-    },
-    text: {
-        width: Dimensions.get('window').width - 20,
-        height: 30,
-        textAlign: 'center',
-        fontSize: 18,
-        color: '#fff',
-        lineHeight: 30,
-        fontWeight: '500',
-        backgroundColor: 'rgb(0, 191, 255)'
-    },
-    modalContainer: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'rgba(52,52,52,0.3)',
-    },
-    modal: {
-        justifyContent: 'center',
-        width: Dimensions.get('window').width - 100,
-        height: 300,
-        backgroundColor: '#fff',
-        borderRadius: 5,
-        borderWidth: 1,
-        borderColor: '#ccc',
-        padding: 5
-    },
-    modalHeading: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        padding: 5,
-        fontSize: 18,
-    },
-    row: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'row',
-    },
-    modalText: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        fontSize: 48,
-        color: '#000',
-        fontWeight: '500',
-    },
-    Countertext: {
-        fontSize: 32,
-        color: '#000',
-        fontWeight: '500',
-    },
-    modalButton: {
-        width: 40,
-        height: 40,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderColor: '#ccc',
-        borderWidth: 1,
-        shadowColor: '#000',
-        shadowOpacity: 0.2,
-        elevation: 5,
-        shadowRadius: 5,
-        shadowOffset: { width: 1, height: 1 },
-    },
-    doneButtonContainer: {
-        shadowColor: '#000',
-        shadowOpacity: 0.2,
-        elevation: 1,
-        shadowRadius: 5,
-        shadowOffset: { width: 1, height: 2 },
-        paddingLeft: 10,
-        paddingRight: 10,
-        paddingTop: 15,
-        paddingBottom: 25,
-    },
-    DoneButton: {
-        width: Dimensions.get('window').width - 20,
-        height: 40,
-        borderRadius: 5,
-        borderColor: '#ccc',
-        borderWidth: 1,
-        backgroundColor: '#F0F0F0'
-    },
-    DoneButtonText: {
-        textAlign: 'center',
-        fontSize: 20,
-        color: '#000',
-        fontWeight: '500',
-        lineHeight: 40,
-    },
-    DunButton: {
-        width: Dimensions.get('window').width - 180,
-        height: 40,
-        borderRadius: 5,
-        borderColor: '#ccc',
-        borderWidth: 1,
-        backgroundColor: '#F0F0F0'
-    },
-});
