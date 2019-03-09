@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Button, Modal, TouchableOpacity, Image, ScrollView, TouchableWithoutFeedback } from 'react-native';
 import styles from '../Styles/ExercisesScreenStyle';
+
 export default class ExercisesScreen extends Component {
     constructor(props) {
         super(props);
@@ -63,7 +64,7 @@ export default class ExercisesScreen extends Component {
             'Leg Extensions',
             'Leg Curls',
             'Stair Climber',
-            'Sideways Risistence Leg Extensions',
+            'Sideways Resistence Leg Extensions',
             'Burpees'
         ];
         this.shoulderItems = [
@@ -187,47 +188,47 @@ export default class ExercisesScreen extends Component {
         switch (item) {
             //All the back exercises
             case "Deadlifts":
-                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                this.description = <Text style={styles.modalHeading}>{item}</Text>;
                 break;
             case "Lat Pulldowns":
-                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                this.description = <Text style={styles.modalHeading}>{item}</Text>;
                 break;
             case "Rows":
-                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                this.description = <Text style={styles.modalHeading}>{item}</Text>;
                 break;
             case "Dumbbell Rows":
-                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                this.description = <Text style={styles.modalHeading}>{item}</Text>;
                 break;
             case "Rowing Maching":
-                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                this.description = <Text style={styles.modalHeading}>{item}</Text>;
                 break;
             case "Pull-Ups":
-                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                this.description = <Text style={styles.modalHeading}>{item}</Text>;
                 break;
             case "Chin-Ups":
-                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                this.description = <Text style={styles.modalHeading}>{item}</Text>;
                 break;
             case "Rack-Pulls":
-                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                this.description = <Text style={styles.modalHeading}>{item}</Text>;
                 break;
             case "Standing Cable Reverse Fly":
-                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                this.description = <Text style={styles.modalHeading}>{item}</Text>;
                 break;
             //All the bicep exercises
             case "Dumbbell Curls":
-                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                this.description = <Text style={styles.modalHeading}>{item}</Text>;
                 break;
             case "Barbell Curls":
-                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                this.description = <Text style={styles.modalHeading}>{item}</Text>;
                 break;
             case "Preacher Curls":
-                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                this.description = <Text style={styles.modalHeading}>{item}</Text>;
                 break;
             case "Hammer Curls":
-                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                this.description = <Text style={styles.modalHeading}>{item}</Text>;
                 break;
             case "Cable Curls":
-                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                this.description = <Text style={styles.modalHeading}>{item}</Text>;
                 break;
             //All the chest exercises
             //All the tricep exercises
@@ -248,14 +249,13 @@ export default class ExercisesScreen extends Component {
         return (
             <View style={this.state.modalVisible ? styles.transparent : styles.container}>
                 <ScrollView>
-                    <Text style={styles.heading}>Tap an exercise to see the description</Text>
+                    <Text style={styles.heading}>Tap a {this.G} exercise to see the description</Text>
                     {
                         this.populateArray(this.G, this.E).map((item, key) =>
                             (
                                 <TouchableOpacity key={key} onPress={() => { this.toggleModal(true), this.setDescription(item) }} style={styles.button}>
                                     <View style={styles.buttonInternals}>
-                                        <Image source={require('../../assets/dumbbell.png')} style={styles.image} />
-                                        <Text style={styles.text}>{item}</Text>
+                                        <Text style={styles.text}>{item.length <= 20 ? item : item.substr(0, 17) + "..."}</Text>
                                     </View>
                                 </TouchableOpacity>
                             ))
