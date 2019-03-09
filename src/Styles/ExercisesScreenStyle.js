@@ -6,6 +6,12 @@ export default styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    transparent: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        opacity: 0.4,
+    },
     heading: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -43,14 +49,16 @@ export default styles = StyleSheet.create({
         fontSize: 18,
         color: '#fff',
         lineHeight: 30,
-        fontWeight: '500',
-        backgroundColor: 'rgb(254, 149, 49)',
+        fontWeight: '200',
+        backgroundColor: '#8470FF',
     },
     modalContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'rgba(52,52,52,0.3)',
+        shadowOffset: { width: 2, height: 1, },
+        shadowColor: 'black',
+        shadowOpacity: 0.3,
     },
     modal: {
         justifyContent: 'center',
@@ -80,12 +88,12 @@ export default styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 48,
         color: '#000',
-        fontWeight: '500',
+        fontWeight: '200',
     },
     Countertext: {
         fontSize: 32,
         color: '#000',
-        fontWeight: '500',
+        fontWeight: '200',
     },
     modalButton: {
         width: 40,

@@ -184,33 +184,59 @@ export default class ExercisesScreen extends Component {
 
     }
     setDescription(item) {
-        if(this.G == "back"){
-
-        }
-        if (this.G == "biceps") {
-            if (item == "Dumbbell Curls") {
-                this.description = <Text style={styles.modalHeading}>This is the dumbbell curls description</Text>;
-            } else if (item == "Barbell Curls") {
-                this.description = <Text style={styles.modalHeading}>This is the Barbell curls description</Text>;
-            }
-            else if (item == "Preacher Curls") {
-                this.description = <Text style={styles.modalHeading}>This is the Preacher curls description</Text>;
-            }
-        }
-        if(this.G == "chest"){
-            
-        }
-        if(this.G == "triceps"){
-            
-        }
-        if(this.G == "legs"){
-            
-        }
-        if(this.G == "shoulder"){
-            
-        }
-        if(this.G == "abdomen"){
-            
+        switch (item) {
+            //All the back exercises
+            case "Deadlifts":
+                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                break;
+            case "Lat Pulldowns":
+                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                break;
+            case "Rows":
+                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                break;
+            case "Dumbbell Rows":
+                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                break;
+            case "Rowing Maching":
+                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                break;
+            case "Pull-Ups":
+                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                break;
+            case "Chin-Ups":
+                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                break;
+            case "Rack-Pulls":
+                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                break;
+            case "Standing Cable Reverse Fly":
+                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                break;
+            //All the bicep exercises
+            case "Dumbbell Curls":
+                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                break;
+            case "Barbell Curls":
+                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                break;
+            case "Preacher Curls":
+                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                break;
+            case "Hammer Curls":
+                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                break;
+            case "Cable Curls":
+                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                break;
+            //All the chest exercises
+            //All the tricep exercises
+            //All the legs exercises
+            //All the shoulder exercises
+            //All the ab exercises
+            default:
+                this.description = <Text style={styles.modalHeading}>Description</Text>;
+                break;
         }
     }
     componentWillReceiveProps() {
@@ -220,7 +246,7 @@ export default class ExercisesScreen extends Component {
         this.G = this.props.navigation.state.params.mGroup;
         this.E = this.props.navigation.state.params.exercises;
         return (
-            <View style={styles.container}>
+            <View style={this.state.modalVisible ? styles.transparent : styles.container}>
                 <ScrollView>
                     <Text style={styles.heading}>Tap an exercise to see the description</Text>
                     {
@@ -236,7 +262,7 @@ export default class ExercisesScreen extends Component {
                     }
                 </ScrollView>
                 <Modal
-                    animationType={"fade"}
+                    animationType={"slide"}
                     transparent={true}
                     visible={this.state.modalVisible}
                     onRequestClose={() => { this.toggleModal(false) }}
