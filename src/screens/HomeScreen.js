@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { View, Text, Modal, TouchableOpacity, ScrollView, TouchableWithoutFeedback } from 'react-native';
 import WorkoutButton from '../Components/WorkoutButton';
 import styles from '../Styles/HomeScreenStyle';
+import { BackData } from '../Data/BackData.js';
+import { BicepData } from '../Data/BicepData.js';
+import { ChestData } from '../Data/ChestData.js';
+import { TricepData } from '../Data/TricepData.js';
+import { LegData } from '../Data/LegData.js';
+import { ShoulderData } from '../Data/ShoulderData.js';
+import { AbdomenData } from '../Data/AbdomenData.js';
+
 export default class WorkoutScreen extends Component {
 
     state = {
@@ -39,25 +47,25 @@ export default class WorkoutScreen extends Component {
     toggleMaxExercises(e) {
         switch (e) {
             case "back":
-                this.setState({ maxExercises: 9 });
+                this.setState({ maxExercises: BackData.length });
                 break;
             case "biceps":
-                this.setState({ maxExercises: 5 });
+                this.setState({ maxExercises: BicepData.length });
                 break;
             case "chest":
-                this.setState({ maxExercises: 10 });
+                this.setState({ maxExercises: ChestData.length });
                 break;
             case "triceps":
-                this.setState({ maxExercises: 7 });
+                this.setState({ maxExercises: TricepData.length });
                 break;
             case "legs":
-                this.setState({ maxExercises: 17 });
+                this.setState({ maxExercises: LegData.length });
                 break;
             case "shoulder":
-                this.setState({ maxExercises: 8 });
+                this.setState({ maxExercises: ShoulderData.length });
                 break;
             case "abdomen":
-                this.setState({ maxExercises: 18 });
+                this.setState({ maxExercises: AbdomenData.length });
                 break;
             default:
                 this.setState({ maxExercises: 0 });
@@ -108,7 +116,7 @@ export default class WorkoutScreen extends Component {
                                 </View>
                                 <TouchableOpacity onPress={() => {
                                     if (this.state.count == 0) {
-                                        //done navigate or anything
+                                        //don't navigate or anything
                                     } else {
                                         this.props.navigation.navigate('Exercises', {
                                             mGroup: this.state.muscleGroup,

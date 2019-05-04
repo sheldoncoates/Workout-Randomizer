@@ -58,12 +58,12 @@ export default styles = StyleSheet.create({
     modal: {
         justifyContent: 'center',
         width: Dimensions.get('window').width - 100,
-        height: 300,
+        height: Dimensions.get('window').height/2,
         backgroundColor: '#fff',
         borderRadius: 5,
         borderWidth: 1,
         borderColor: '#ccc',
-        padding: 5
+        padding: 5,
     },
     modalHeading: {
         alignItems: 'center',

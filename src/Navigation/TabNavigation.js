@@ -4,6 +4,7 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 import Home from '../Screens/HomeScreen';
 import Exercises from '../Screens/ExercisesScreen';
 import Interval from '../Screens/IntervalScreen';
+import Descriptions from '../Screens/DescriptionsScreen';
 
 const stackNavigator = createStackNavigator({
     Home:{
@@ -39,5 +40,17 @@ const stackNavigator = createStackNavigator({
             headerMode: 'float',
         })
     },
+    Descriptions:{
+        screen: Descriptions,
+        navigationOptions: ({ navigation }) => ({
+            headerTitle: <Text style={{
+                fontSize: 22,
+                fontWeight: '700',
+                color: '#000',
+            }}>Description</Text>,
+            headerMode: 'float',
+        })
+    },
+
 })
 export default createAppContainer(stackNavigator);
