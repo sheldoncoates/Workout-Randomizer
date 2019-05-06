@@ -12,7 +12,13 @@ export default styles = StyleSheet.create({
         fontWeight: "bold"
     },
     body:{
-        padding: 20,
+        paddingLeft: 20,
+        paddingRight: 20,
+        fontSize: 16
+    },
+    link:{
+        paddingTop: 20,
+        paddingLeft: 20,
         fontSize: 16
     }
 });

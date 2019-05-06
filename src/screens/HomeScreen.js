@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Modal, TouchableOpacity, ScrollView, TouchableWithoutFeedback } from 'react-native';
 import WorkoutButton from '../Components/WorkoutButton';
+import DecisionButton from '../Components/DecisionButton';
 import styles from '../Styles/HomeScreenStyle';
 import { BackData } from '../Data/BackData.js';
 import { BicepData } from '../Data/BicepData.js';
@@ -74,7 +75,7 @@ export default class WorkoutScreen extends Component {
     }
     render() {
         return (
-            <View style={this.state.modalVisible ? styles.transparent:styles.container}>
+            <View style={this.state.modalVisible ? styles.transparent : styles.container}>
                 <View style={styles.container}>
                     <ScrollView>
                         <Text style={styles.heading}>Choose the muscle group you want to workout then choose how many exercises</Text>
@@ -114,7 +115,7 @@ export default class WorkoutScreen extends Component {
                                         </View>
                                     </TouchableOpacity>
                                 </View>
-                                <TouchableOpacity onPress={() => {
+                                <DecisionButton text='Start' textColour='#fff' style={{backgroundColor: '#3399FF'}}onPress={() => {
                                     if (this.state.count == 0) {
                                         //don't navigate or anything
                                     } else {
@@ -123,24 +124,15 @@ export default class WorkoutScreen extends Component {
                                             exercises: this.state.count,
                                             flag: true
                                         }), this.toggleModal(!this.state.modalVisible), this.resetCount(), this.resetGroup()
-
                                     }
-
-                                }} style={{ paddingBottom: 10 }}>
-                                    <View style={[styles.DecisionButton, { backgroundColor: '#3399FF' }]}>
-                                        <Text style={styles.DecisionButtonText}>Start</Text>
-                                    </View>
-                                </TouchableOpacity>
-                                <TouchableOpacity onPress={() => { this.toggleModal(!this.state.modalVisible, this.resetCount()) }}>
-                                    <View style={[styles.DecisionButton, { backgroundColor: '#F0F0F0' }]}>
-                                        <Text style={[styles.DecisionButtonText, { color: '#000' }]}>Cancel</Text>
-                                    </View>
-                                </TouchableOpacity>
+                                }}/>
+                                <View style={{padding: 5}}></View>
+                                <DecisionButton text='Cancel' textColour='#000' style={{backgroundColor: '#F0F0F0'}} onPress={() => { this.toggleModal(!this.state.modalVisible, this.resetCount()) }}/>
                             </View>
                         </TouchableWithoutFeedback>
                     </TouchableOpacity>
                 </Modal>
-            </View>
+            </View >
         );
     }
 }

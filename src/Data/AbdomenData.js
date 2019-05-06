@@ -2,7 +2,7 @@ export const AbdomenData = [
     {
         Name: "Plank",
         Group: "abdomen",
-        Description: "Description",
+        Description: "",
     },
     {
         Name: "Side Plank",

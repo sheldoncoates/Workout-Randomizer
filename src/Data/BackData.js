@@ -2,17 +2,17 @@ export const BackData = [
     {
         Name: "Deadlifts",
         Group: "back",
-        Description: "With feet flat beneath bar squat down and grasp bar with shoulder width or slightly wider overhand or mixed grip. Lift bar by extending hips and knees to full extension. Pull shoulders back at top of lift if rounded. Return weights to floor by bending hips back while allowing knees to bend forward, keeping back straight and knees pointed same direction as feet. Repeat.",
+        Description: "1. With feet flat beneath bar squat down and grasp bar with shoulder width or slightly wider overhand or mixed grip.\n2. Lift bar by extending hips and knees to full extension.\n3. Pull shoulders back at top of lift if rounded.\n4. Return weights to floor by bending hips back while allowing knees to bend forward, keeping back straight and knees pointed same direction as feet. Repeat.",
     },
     {
         Name: "Lat Pulldowns",
         Group: "back",
-        Description: "While sitting with your upper thighs restrained under a thigh pad, you pull a hanging bar down toward you, to reach chin level, and then release it back up with control for one repetition. This exercise can be done as part of an upper body strength workout.",
+        Description: "1. While sitting with your upper thighs restrained under a thigh pad, you pull a hanging bar down toward you, to reach chin level, and then release it back up with control for one repetition.\n2. This exercise can be done as part of an upper body strength workout.",
     },
     {
         Name: "Rows",
         Group: "back",
-        Description: "Pull the handle and weight back toward the lower abdomen while trying not to use the momentum of the row too much by moving the torso backward with the arms. Target the middle to upper back by keeping your back straight and squeezing your shoulder blades together as you row, chest out. Return the handle forward under tension to full stretch, remembering to keep that back straight even though flexed at the hips. Repeat the exercise for the desired number of repetitions.",
+        Description: "1.Pull the handle and weight back toward the lower abdomen while trying not to use the momentum of the row too much by moving the torso backward with the arms.\n2.Target the middle to upper back by keeping your back straight and squeezing your shoulder blades together as you row, chest out.\n3. Return the handle forward under tension to full stretch, remembering to keep that back straight even though flexed at the hips.\n4. Repeat the exercise for the desired number of repetitions.",
     },
     {
         Name: "Dumbbell Rows",

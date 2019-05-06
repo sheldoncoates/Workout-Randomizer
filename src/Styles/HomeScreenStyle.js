@@ -78,19 +78,5 @@ export default styles = StyleSheet.create({
         elevation: 5,
         shadowRadius: 5,
         shadowOffset: { width: 1, height: 1 },
-    },
-    DecisionButton: {
-        width: Dimensions.get('window').width - 250,
-        height: 30,
-        borderRadius: 5,
-        borderColor: '#ccc',
-        borderWidth: 1,
-    },
-    DecisionButtonText: {
-        textAlign: 'center',
-        fontSize: 16,
-        color: '#fff',
-        fontWeight: '500',
-        lineHeight: 30,
     }
 });

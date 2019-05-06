@@ -17,10 +17,10 @@ export default class DescriptionsScreen extends Component {
                 <ScrollView>
                     <Text style={styles.heading}>{this.exercise}</Text>
                     <Text style={styles.body}>{this.description}</Text>
-                    <Text style={styles.body}>Description from</Text>
-                    <TouchableOpacity style={styles.body} onPress={() => Linking.openURL('https://www.bodybuilding.com')}>
+                    <TouchableOpacity style={styles.link} onPress={() => Linking.openURL('https://www.bodybuilding.com')}>
                         <Text style={{ color: 'blue' }}>BodyBuilding.com</Text>
                     </TouchableOpacity>
+
 
                 </ScrollView>
             </View>

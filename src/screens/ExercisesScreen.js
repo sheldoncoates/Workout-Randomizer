@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { Icon } from 'react-native-elements'
 import styles from '../Styles/ExercisesScreenStyle';
 import { BackData } from '../Data/BackData.js';
 import { BicepData } from '../Data/BicepData.js';
@@ -19,12 +20,8 @@ export default class ExercisesScreen extends Component {
         this.flag = true;
     }
     state = {
-        modalVisible: false,
         description: "",
         exercise: ""
-    }
-    toggleModal(visible) {
-        this.setState({ modalVisible: visible });
     }
     getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
@@ -94,7 +91,7 @@ export default class ExercisesScreen extends Component {
         this.Group = this.props.navigation.state.params.mGroup;
         this.Exercises = this.props.navigation.state.params.exercises;
         return (
-            <View style={this.state.modalVisible ? styles.transparent : styles.container}>
+            <View style={styles.container}>
                 <ScrollView>
                     <Text style={styles.heading}>Tap the {this.Group} exercise to see the description</Text>
                     {
@@ -109,6 +106,7 @@ export default class ExercisesScreen extends Component {
                                 }} style={styles.button}>
                                     <View style={styles.buttonInternals}>
                                         <Text style={styles.text}>{item.length <= 20 ? item : item.substr(0, 17) + "..."}</Text>
+                                        <Icon name='arrow-forward' color='#fff' containerStyle={{ alignItems: 'flex-end' }} />
                                     </View>
                                 </TouchableOpacity>
                             ))
