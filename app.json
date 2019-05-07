@@ -11,7 +11,7 @@
     "version": "1.0.0",
     "githubUrl":"https://github.com/sheldoncoates/Workout-Randomizer",
     "orientation": "portrait",
-    "icon": "./assets/dumbbell.png",
+    "icon": "./assets/logo.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
