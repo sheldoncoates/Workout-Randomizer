@@ -17,8 +17,8 @@ export default styles = StyleSheet.create({
         justifyContent: 'center',
         textAlign: 'center',
         paddingTop: 20,
-        paddingLeft: 5,
-        paddingRight: 5,
+        paddingLeft: 25,
+        paddingRight: 25,
         paddingBottom: 20,
         fontSize: 18,
     },
@@ -31,9 +31,9 @@ export default styles = StyleSheet.create({
         shadowOpacity: 0.3,
     },
     modal: {
-        width: Dimensions.get('window').width - 80,
+        width: Dimensions.get('window').width - 100,
         height: 320,
-        backgroundColor: '#1d1d1d',
+        backgroundColor: '#4e525b',
         borderRadius: 5,
         borderColor: '#ccc',
         borderWidth: 0.5,
@@ -78,5 +78,14 @@ export default styles = StyleSheet.create({
         elevation: 5,
         shadowRadius: 5,
         shadowOffset: { width: 1, height: 1 },
+    },
+    Browse:{
+        color: 'blue',
+        paddingTop: 20,
+        paddingBottom: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
+
     }
 });

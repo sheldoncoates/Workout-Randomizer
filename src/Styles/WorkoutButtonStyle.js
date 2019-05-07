@@ -1,14 +1,17 @@
-import {StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 export default styles = StyleSheet.create({
     button: {
         paddingLeft: 25,
         paddingRight: 25,
         paddingTop: 10,
         paddingBottom: 10,
+        shadowOffset: { width: 1, height: 1, },
+        shadowColor: 'black',
+        shadowOpacity: 0.5,
     },
     buttonInternals: {
         flex: 1,
-        flexDirection: 'row',  
+        flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         width: Dimensions.get('window').width - 50,

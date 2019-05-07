@@ -86,6 +86,9 @@ export default class WorkoutScreen extends Component {
                         <WorkoutButton group="Legs" onPress={() => { this.toggleModal(true), this.toggleGroup("legs"), this.toggleMaxExercises("legs") }} />
                         <WorkoutButton group="Shoulders" onPress={() => { this.toggleModal(true), this.toggleGroup("shoulder"), this.toggleMaxExercises("shoulder") }} />
                         <WorkoutButton group="Abdomen" onPress={() => { this.toggleModal(true), this.toggleGroup("abdomen"), this.toggleMaxExercises("abdomen") }} />
+                        <TouchableOpacity onPress={() => { this.props.navigation.navigate(''), this.resetCount(), this.resetGroup() }}>
+                            <Text style={styles.Browse}>Browse All</Text>
+                        </TouchableOpacity>
                     </ScrollView>
                 </View>
                 <Modal
@@ -115,7 +118,7 @@ export default class WorkoutScreen extends Component {
                                         </View>
                                     </TouchableOpacity>
                                 </View>
-                                <DecisionButton text='Start' textColour='#fff' style={{backgroundColor: '#3399FF'}}onPress={() => {
+                                <DecisionButton text='Start' textColour='#fff' style={{ backgroundColor: '#3399FF' }} onPress={() => {
                                     if (this.state.count == 0) {
                                         //don't navigate or anything
                                     } else {
@@ -125,9 +128,9 @@ export default class WorkoutScreen extends Component {
                                             flag: true
                                         }), this.toggleModal(!this.state.modalVisible), this.resetCount(), this.resetGroup()
                                     }
-                                }}/>
-                                <View style={{padding: 5}}></View>
-                                <DecisionButton text='Cancel' textColour='#000' style={{backgroundColor: '#F0F0F0'}} onPress={() => { this.toggleModal(!this.state.modalVisible, this.resetCount()) }}/>
+                                }} />
+                                <View style={{ padding: 5 }}></View>
+                                <DecisionButton text='Cancel' textColour='#000' style={{ backgroundColor: '#F0F0F0' }} onPress={() => { this.toggleModal(!this.state.modalVisible, this.resetCount()) }} />
                             </View>
                         </TouchableWithoutFeedback>
                     </TouchableOpacity>

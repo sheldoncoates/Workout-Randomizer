@@ -6,6 +6,9 @@ export default styles = StyleSheet.create({
         borderRadius: 5,
         borderColor: '#ccc',
         borderWidth: 1,
+        shadowOffset: { width: 1, height: 1, },
+        shadowColor: 'black',
+        shadowOpacity: 0.5,
     },
     DecisionButtonText: {
         textAlign: 'center',

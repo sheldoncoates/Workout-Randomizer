@@ -14,9 +14,16 @@ export default class DescriptionsScreen extends Component {
         this.description = this.props.navigation.state.params.description;
         return (
             <View style={styles.container}>
-                <ScrollView>
+                <ScrollView >
                     <Text style={styles.heading}>{this.exercise}</Text>
-                    <Text style={styles.body}>{this.description}</Text>
+                    {
+                        this.description.map((item, index) =>
+                            (
+                                <View key={index} style={styles.section}>
+                                    <Text style={styles.sectionText}>{item}</Text>
+                                </View>
+                            ))
+                    }
                     <TouchableOpacity style={styles.link} onPress={() => Linking.openURL('https://www.bodybuilding.com')}>
                         <Text style={{ color: 'blue' }}>BodyBuilding.com</Text>
                     </TouchableOpacity>
