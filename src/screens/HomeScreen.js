@@ -86,7 +86,7 @@ export default class WorkoutScreen extends Component {
                         <WorkoutButton group="Legs" onPress={() => { this.toggleModal(true), this.toggleGroup("legs"), this.toggleMaxExercises("legs") }} />
                         <WorkoutButton group="Shoulders" onPress={() => { this.toggleModal(true), this.toggleGroup("shoulder"), this.toggleMaxExercises("shoulder") }} />
                         <WorkoutButton group="Abdomen" onPress={() => { this.toggleModal(true), this.toggleGroup("abdomen"), this.toggleMaxExercises("abdomen") }} />
-                        <TouchableOpacity onPress={() => { this.props.navigation.navigate(''), this.resetCount(), this.resetGroup() }}>
+                        <TouchableOpacity onPress={() => { this.props.navigation.navigate('AllExercises'), this.resetCount(), this.resetGroup() }}>
                             <Text style={styles.Browse}>Browse All</Text>
                         </TouchableOpacity>
                     </ScrollView>

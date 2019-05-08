@@ -5,6 +5,7 @@ import Home from '../Screens/HomeScreen';
 import Exercises from '../Screens/ExercisesScreen';
 import Interval from '../Screens/IntervalScreen';
 import Descriptions from '../Screens/DescriptionsScreen';
+import AllExercises from '../Screens/AllExercisesScreen';
 
 const stackNavigator = createStackNavigator({
     Home:{
@@ -51,6 +52,16 @@ const stackNavigator = createStackNavigator({
             headerMode: 'float',
         })
     },
-
+    AllExercises:{
+        screen: AllExercises,
+        navigationOptions: ({ navigation }) => ({
+            headerTitle: <Text style={{
+                fontSize: 22,
+                fontWeight: '700',
+                color: '#000',
+            }}>All Exercises</Text>,
+            headerMode: 'float',
+        })
+    },
 })
 export default createAppContainer(stackNavigator);
