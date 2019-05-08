@@ -1,16 +1,14 @@
 <!-- PROJECT SHIELDS -->
 [![Build Status][build-shield]]()
 [![Contributors][contributors-shield]]()
-[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
 
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://sheldoncoates.github.io">
-    <img src="assets/dumbbell.png" alt="Logo" width="80" height="80">
+  <a href="https://exp.host/@sheldoncoates/Workout-Randomizer">
+    <img src="assets/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Workout Randomizer</h3>
@@ -29,7 +27,6 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
-* [License](#license)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
@@ -45,12 +42,6 @@ Here is the tech I used to put together this app.
 
 If you'd like to view a demo of this app, download [Expo](https://expo.io/) from the app store and make an account. Once downloaded, use your phone and click this link to open the project using Expo: [https://exp.host/@sheldoncoates/Workout-Randomizer](https://exp.host/@sheldoncoates/Workout-Randomizer). Keep in mind that this project is under development and only optimized for iOS at the moment. Andriod support coming soon.
 
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
 <!-- CONTACT -->
 ## Contact
 
@@ -65,11 +56,8 @@ Project Link: [https://exp.host/@sheldoncoates/Workout-Randomizer](https://exp.h
 * [JavaScript](https://www.javascript.com/)
 
 
-
 <!-- MARKDOWN LINKS & IMAGES -->
 [build-shield]: https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat-square
 [contributors-shield]: https://img.shields.io/badge/contributors-1-orange.svg?style=flat-square
-[license-shield]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
-[license-url]: https://choosealicense.com/licenses/mit
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/sheldoncoates/
