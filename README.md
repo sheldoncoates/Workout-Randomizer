@@ -33,6 +33,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+
+[![Product Name Screen Shot][product-screenshot]](https://github.com/sheldoncoates/Workout-Randomizer)
+
 This project was made to keep everyones workout fresh and new everytime they go to the gym. It also was meant to alleviate the stress of having to memorize workouts/ exercises.
 
 ### Built With
@@ -61,3 +64,4 @@ Project Link: [https://exp.host/@sheldoncoates/Workout-Randomizer](https://exp.h
 [contributors-shield]: https://img.shields.io/badge/contributors-1-orange.svg?style=flat-square
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/sheldoncoates/
+[product-screenshot]: /assets/SimScreenShot.png
