@@ -33,7 +33,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<br />
 <p align="center">
   <a href="https://exp.host/@sheldoncoates/Workout-Randomizer">
     <img src="assets/SimScreenShot.png" alt="sim" width="50%" height="50%">
