@@ -27,6 +27,9 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
@@ -47,6 +50,23 @@ Here is the tech I used to put together this app.
 * [JavaScript](https://www.javascript.com/)
 
 If you'd like to view a demo of this app, download [Expo](https://expo.io/) from the app store and make an account. Once downloaded, use your phone and click this link to open the project using Expo: [https://exp.host/@sheldoncoates/Workout-Randomizer](https://exp.host/@sheldoncoates/Workout-Randomizer). Keep in mind that this project is under development and only optimized for iOS at the moment. Andriod support coming soon.
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+If you'd like to have the Workout-Randomizer code on your machine (for fun or whatever), make sure you have the following prerequisites before trying to do installation.
+
+### Prerequisites
+
+Make sure you have:
+* [Node.js](https://nodejs.org/en/)
+* [Expo](https://expo.io/)
+
+
+### Installation
+
+1. Once you've cloned Workout-Randomizer onto your machine, cd into the Workout-Randomizer directory and run: `npm install`. This will install all necessary dependencies.
+2. Next run: `expo start - i` in the terminal window and Workout-Randomizer will now open up in your broswer along with on the iOS simulator
 
 <!-- CONTACT -->
 ## Contact

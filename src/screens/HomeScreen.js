@@ -89,6 +89,7 @@ export default class HomeScreen extends Component {
                         <TouchableOpacity onPress={() => { this.props.navigation.navigate('AllExercises'), this.resetCount(), this.resetGroup() }}>
                             <Text style={styles.Browse}>Browse All</Text>
                         </TouchableOpacity>
+                        <Text style={styles.heading}>Copyright Sheldon Coates 2019</Text>
                     </ScrollView>
                 </View>
                 <Modal
