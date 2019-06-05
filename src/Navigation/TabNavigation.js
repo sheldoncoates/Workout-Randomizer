@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
-import Home from '../Screens/HomeScreen';
+import Home from '../Screens/HomeScreen.js';
 import Exercises from '../Screens/ExercisesScreen';
 import Interval from '../Screens/IntervalScreen';
 import Descriptions from '../Screens/DescriptionsScreen';

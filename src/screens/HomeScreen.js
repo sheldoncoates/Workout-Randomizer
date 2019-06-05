@@ -11,7 +11,7 @@ import { LegData } from '../Data/LegData.js';
 import { ShoulderData } from '../Data/ShoulderData.js';
 import { AbdomenData } from '../Data/AbdomenData.js';
 
-export default class WorkoutScreen extends Component {
+export default class HomeScreen extends Component {
 
     state = {
         modalVisible: false,
